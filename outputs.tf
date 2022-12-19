@@ -3,6 +3,12 @@ output lambda_arn {
   value       = aws_lambda_function.lambda.arn
 }
 
+output lambda_invoke_arn {
+  description = "API Lambd invoke arn."
+  value       = aws_lambda_function.lambda.invoke_arn
+}
+
+
 output lambda_name {
   description = "API Lambda name."
   value       = aws_lambda_function.lambda.function_name
