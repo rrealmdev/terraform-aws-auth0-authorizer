@@ -31,7 +31,7 @@ resource aws_lambda_function lambda {
   handler          = "index.handler"
   memory_size      = var.lambda_memory_size
   role             = aws_iam_role.role.arn
-  runtime          = "nodejs12.x"
+  runtime          = "nodejs16.x"
   source_code_hash = filebase64sha256("${path.module}/package.zip")
   tags             = var.lambda_tags
   timeout          = var.lambda_timeout
