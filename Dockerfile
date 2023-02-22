@@ -1,5 +1,7 @@
-ARG RUNTIME=nodejs12.x
-FROM lambci/lambda:build-${RUNTIME}
+ARG RUNTIME=public.ecr.aws/lambda/nodejs:16
+FROM ${RUNTIME}
+RUN yum update -y
+RUN yum install -y zip unzip
 COPY . .
 RUN npm install --production
 RUN zip -9r package.zip index.js node_modules package*.json

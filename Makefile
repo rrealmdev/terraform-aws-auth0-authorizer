@@ -1,5 +1,5 @@
 REPO    := amancevice/$(shell basename $$PWD)
-RUNTIME := nodejs12.x
+RUNTIME := public.ecr.aws/lambda/nodejs:16
 
 package.zip: package.iid package-lock.json
 	docker run --rm --entrypoint cat $$(cat $<) $@ > $@
