@@ -1,4 +1,4 @@
-ARG RUNTIME=public.ecr.aws/lambda/nodejs:16
+ARG RUNTIME=public.ecr.aws/lambda/nodejs:18
 FROM ${RUNTIME}
 RUN yum update -y
 RUN yum install -y zip unzip
